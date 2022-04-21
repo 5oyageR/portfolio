@@ -2,7 +2,7 @@
 
 global $pdo;
 $pdo = new \PDO(
-    'mysql:host=localhost:8889;dbname=portfolioSite',
+    'mysql:host=localhost:8889;dbname=Students_Portfolio_DB',
     "root",
     "root" 
 );
