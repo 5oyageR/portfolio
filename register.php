@@ -1,6 +1,6 @@
 <?php include "template/header.php"
 ?>
-<form method="post">
+<form action="/signUp.php" method="post">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Type your email</label>
     <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
