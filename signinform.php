@@ -1,6 +1,6 @@
 <?php include "template/header.php"
 ?>
-<form>
+<form method="post">
   <div class="mt-2">
     <label for="exampleInputEmail1" class="form-label">Login</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
