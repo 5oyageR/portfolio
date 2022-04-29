@@ -5,8 +5,17 @@ $pdo = new \PDO(
     "root",
     "root" 
 );
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-// $res = $pdo->query('select * from search "smth" ;');
-// var_dump($res->fetchAll());
+ //$res = $pdo->query('select * from users "email" ;');
+ //var_dump($res->fetchAll());
+ function saveUser($email,$password){
+    global $pdo;
+
+    $sqlString = "INSERT INTO user (login,password) VALUES ('$email','$password')";
+
+    return $pdo->exec($sqlString);
+ }
 ?>
+
 
