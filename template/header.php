@@ -24,11 +24,18 @@
           <li class="nav-item">
             <a class="nav-link active" href="#">Results</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link active" href="/signinform.php">Sign in</a>
-          </li>
+          </li> -->
           <li class="nav-item">
-            <a class="nav-link active" href="/register.php">Get Started</a>
+          <a class="nav-link active" href="/newRegForm.php">
+          <button class="btn btn-outline-light" type="submit">Get Started</button>
+</a>
+<li class="nav-item">
+          <a class="nav-link active" href="/signinform.php">
+          <button class="btn btn-outline-light" type="submit">Sign in</button>
+</a>
+            <!-- <a class="nav-link active" href="/register.php">Get Started</a> -->
         </ul>
         <form action="/search.php" method="get" class="d-flex">
           <input class="form-control me-2" name="search" placeholder="Search" aria-label="Search">

@@ -1,4 +1,10 @@
 <?php include "template/header.php" ?>
+<?php
+if (isset($_REQUEST['submit'])) {
+  include "core/datab.php";
+  $result = saveUser($_REQUEST['email'], $_REQUEST['password']);
+}
+?>
 <div class="container text-center">
   <form method="POST">
     <div class="mt-3">
@@ -11,7 +17,7 @@
     </div>
     <div class="mt-3">
       <label for="exampleInputPassword1" class="form-label">Repeat password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
+      <input type="rep_password" class="form-control" id="exampleInputPassword1">
     </div>
     <div class="mt-3 form-check">
       <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -21,10 +27,4 @@
   </form>
 </div>
 
-<?php
-if (isset($_REQUEST['submit'])) {
-  include "core/datab.php";
-  $result = saveUser($_REQUEST['email'], $_REQUEST['password']);
-}
-?>
 <?php include "template/footer.php" ?>
