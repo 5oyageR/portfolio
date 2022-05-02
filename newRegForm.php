@@ -6,7 +6,7 @@ if (isset($_REQUEST['submit'])) {
 }
 ?>
 <div class="container-fluid vh-100">
-    <div class="" style="margin-top:200px">
+    <div class="" style="margin-top:80px">
         <div class="rounded d-flex justify-content-center">
             <div class="col-md-4 col-sm-12 shadow-lg p-5 bg-light">
                 <div class="text-center">
