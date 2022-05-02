@@ -27,7 +27,7 @@ if (isset($_REQUEST['submit'])) {
                             <input type="password" name="password" class="form-control" placeholder="password">
                         </div>
                         <div class="d-grid col-12 mx-auto">
-                            <button class="btn btn-primary" name="submit" type="button"><span></span>Get Started</button>
+                            <button class="btn btn-primary" name="submit" type="submit">Get Started</button>
                         </div>
                         <p class="text-center mt-3">Already have an account?
                             <span class="text-primary">Sign in</span>
