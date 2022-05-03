@@ -8,7 +8,7 @@ if (isset($_REQUEST['submit'])) {
     // if (count($errors) == 0) {
     include "core/datab.php";
     // } else {
-    $passSalt =  md5(htmlspecialchars($_REQUEST['password']));
+    $passSalt =  md5(md5('sonlnishko').htmlspecialchars($_REQUEST['password']));
     $result = saveUser(htmlspecialchars($_REQUEST['email']), ($passSalt));
     //}
 }
