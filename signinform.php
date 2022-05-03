@@ -1,5 +1,4 @@
-<?php include "template/header.php"
-?>
+<?php include "template/header.php"?>
 <div class="container text-center">
 <form method="post">
   <div class="mt-2">
@@ -17,5 +16,4 @@
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>
-<?php include "template/footer.php"
-?>
+<?php include "template/footer.php"?>
