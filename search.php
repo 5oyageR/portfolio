@@ -4,10 +4,6 @@
 
 
 
-<?php include "core/datab.php"?>
-
-
-
 
 
 

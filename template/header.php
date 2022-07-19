@@ -1,11 +1,16 @@
+<?php
+    session_start();
+    include_once "./core/datab.php";
+    $usersCount = countUsers();
+?>
 <!doctype html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/styles.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <!-- <link rel="stylesheet" href="style.css"> -->
   <title>MyPortfolio</title>
 </head>
 
@@ -19,23 +24,29 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Results</a>
+            <span class="nav-link">Пользователей в системе: <?php echo $usersCount; ?></span>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link active" href="/signinform.php">Sign in</a>
           </li> -->
+          <?php 
+          if($_SESSION['user']){ ?>
+           Привет <?php echo $_SESSION['user']['login']; ?>
+            <?php }else{ ?>
+
+            
           <li class="nav-item">
           <a class="nav-link active" href="/newRegForm.php">
-          <button class="btn btn-outline-light" type="submit">Get Started</button>
-</a>
+          <button class="btn btn-outline-light" type="submit">Зарегестрироваться</button></a>
+</li>
+
 <li class="nav-item">
           <a class="nav-link active" href="/signinform.php">
-          <button class="btn btn-outline-light" type="submit">Sign in</button>
-</a>
-            <!-- <a class="nav-link active" href="/register.php">Get Started</a> -->
+          <button class="btn btn-outline-light" type="submit">Войти</button></a>
+</li>
+
+<?php }
+?>
         </ul>
         <form action="/search.php" method="get" class="d-flex">
           <input class="form-control me-2" name="search" placeholder="Search" aria-label="Search">
