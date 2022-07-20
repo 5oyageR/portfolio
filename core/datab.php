@@ -48,6 +48,42 @@ function countUsers(){
         }
 }
 
+function search ($searchString) {
+    global $pdo;
+    $sqlString = "SELECT * FROM projects WHERE `title` LIKE '%$searchString%' OR `theme` LIKE '%$searchString%';";
+    $result = $pdo->query($sqlString);
+    $projects=[];
+        while($project=$result->fetch()){
+            $projects[]=$project;
+        }
+        return $projects;
+}
+
+function getProject ($id_project){
+    global $pdo;
+    $sqlString = "SELECT projects.title, projects.theme, projects.result,Student.name as studentName ,Student.surname as studentSurname FROM projects LEFT JOIN Student ON projects.id_student=Student.id_student WHERE projects.id_project='$id_project';";
+    $result = $pdo->query($sqlString);
+    if($result){
+        return $result->fetch();
+    } else {
+        return false;
+    }
+}
+
+function deleteProject ($id_project) {
+    global $pdo;
+    $sqlString = "DELETE FROM projects WHERE id_project='$id_project';";
+
+    try {
+        $pdo->exec($sqlString); 
+        return true;
+      } catch (PDOException $e) {
+        print_r($e->getMessage());
+        $pdo->debugDumpParams();
+      }
+
+}
+
 ?>
 
 
