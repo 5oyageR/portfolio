@@ -61,7 +61,7 @@ function search ($searchString) {
 
 function getProject ($id_project){
     global $pdo;
-    $sqlString = "SELECT projects.title, projects.theme, projects.result,Student.name as studentName ,Student.surname as studentSurname FROM projects LEFT JOIN Student ON projects.id_student=Student.id_student WHERE projects.id_project='$id_project';";
+    $sqlString = "SELECT projects.id_project, projects.title, projects.theme, projects.result,Student.name as studentName ,Student.surname as studentSurname FROM projects LEFT JOIN Student ON projects.id_student=Student.id_student WHERE projects.id_project='$id_project';";
     $result = $pdo->query($sqlString);
     if($result){
         return $result->fetch();
@@ -101,6 +101,13 @@ function addProject($projectFields) {
     $sqlString = "INSERT INTO projects (title,theme,result,id_student) VALUES ('{$projectFields['title']}','{$projectFields['theme']}','{$projectFields['result']}', '{$projectFields['id_student']}')";
 
     return $pdo->exec($sqlString);
+}
+
+function editProjectResult($project_id,$result){
+    global $pdo;
+
+        $sqlString = "UPDATE `projects` SET `result` = $result WHERE `projects`.`id_project` = $project_id;"; 
+        return $pdo->exec($sqlString);
 }
 ?>
 
