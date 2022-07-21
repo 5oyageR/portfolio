@@ -84,6 +84,24 @@ function deleteProject ($id_project) {
 
 }
 
+function getStudents(){
+    global $pdo;
+    $sqlString = "SELECT * FROM Student;";
+    $result = $pdo->query($sqlString);
+        $students=[];
+            while($student=$result->fetch()){
+                $students[]=$student;
+            }
+            return $students;
+}
+
+function addProject($projectFields) { 
+    global $pdo;
+
+    $sqlString = "INSERT INTO projects (title,theme,result,id_student) VALUES ('{$projectFields['title']}','{$projectFields['theme']}','{$projectFields['result']}', '{$projectFields['id_student']}')";
+
+    return $pdo->exec($sqlString);
+}
 ?>
 
 

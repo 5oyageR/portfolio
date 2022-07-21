@@ -32,6 +32,10 @@
           <?php 
           if($_SESSION['user']){ ?>
            Привет <?php echo $_SESSION['user']['login']; ?>
+           <li class="nav-item">
+          <a class="nav-link active" href="/addProject.php">
+          <button class="btn btn-outline-light" type="submit">Добавить проект</button></a>
+</li>
             <?php }else{ ?>
 
             
