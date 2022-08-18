@@ -1,0 +1,22 @@
+.container-fluid {
+    align-items: baseline;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+
+.wrapper__card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 75%;
+
+}
+
+
+.card {
+    margin: 10px;
+}
